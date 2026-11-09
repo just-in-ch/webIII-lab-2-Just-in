@@ -2,6 +2,38 @@
 
 Proyecto web en Firebase Hosting + Authentication + Cloud Firestore + Storage.
 
+## Datos de la entrega
+
+| | |
+|---|---|
+| Sitio web (Firebase Hosting) | https://zodiaco-justin.web.app |
+| Repositorio GitHub | https://github.com/just-in-ch/webIII-lab-2-Just-in |
+| Proyecto Firebase | `zodiaco-justin` |
+| Usuario de prueba | `justinchavarria8592@gmail.com` / `85927755` |
+
+## ⚠️ Inconveniente: Cloud Storage no está activado
+
+Desde octubre de 2024, Firebase solo permite activar **Cloud Storage** en proyectos nuevos si el proyecto está en el **plan Blaze** (pago por uso, requiere tarjeta de crédito). No pude cambiar el proyecto a ese plan, así que el proyecto `zodiaco-justin` está en el plan gratuito **Spark** y **no tiene Storage**.
+
+Qué funciona y qué no en el sitio publicado:
+
+| Función | Estado |
+|---|---|
+| Registro de usuarios con `fechaCreacion` y `ultAcceso` (Authentication + Firestore) | ✅ Funciona |
+| Inicio de sesión y actualización de `ultAcceso` | ✅ Funciona |
+| Cierre de sesión por inactividad (3 min) | ✅ Funciona |
+| Reglas de Firestore (`firestore.rules`) | ✅ Publicadas |
+| **Agregar signo** (`agregar.html`) | ❌ Falla al subir la imagen: el bucket de Storage no existe (error 404) |
+| Lista y edición de signos | ⚠️ El código está completo, pero no hay signos cargados porque agregar requiere la imagen |
+| Reglas de Storage (`storage.rules`) | ⚠️ Escritas en el repositorio, pero no se pudieron publicar |
+
+El código de la parte de signos (`addsigno.js`, `lstzodiaco.js`, `editsigno.js`, `storage.rules`) está completo. Si se activa Storage en el proyecto (plan Blaze), basta con ejecutar `firebase deploy --only storage` y cargar los 12 signos de la tabla de abajo para que todo funcione sin cambiar código.
+
+El sitio se publicó sin Storage con:
+```bash
+firebase deploy --only hosting,firestore
+```
+
 ## Qué cambió respecto a la guía
 
 | # | Requisito | Archivos |
@@ -56,7 +88,7 @@ git init
 git add .
 git commit -m "Laboratorio Firebase Zodiaco"
 git branch -M main
-git remote add origin https://github.com/<tu-usuario>/<tu-repo>.git
+git remote add origin https://github.com/just-in-ch/webIII-lab-2-Just-in.git
 git push -u origin main
 ```
 Después: Settings → Collaborators → agregar al profesor.
@@ -67,7 +99,11 @@ Estudiante: Justin Chavarría
 Curso: ITI-621 - Tecnologías y Sistemas Web III
 Laboratorio de Firebase
 
-Repositorio GitHub: https://github.com/<tu-usuario>/<tu-repo>
-Sitio web (Firebase Hosting): https://<tu-proyecto>.web.app
-Usuario de prueba: <correo> / <contraseña>
+Repositorio GitHub: https://github.com/just-in-ch/webIII-lab-2-Just-in
+Sitio web (Firebase Hosting): https://zodiaco-justin.web.app
+Usuario de prueba: justinchavarria8592@gmail.com / 85927755
+
+Nota: Cloud Storage no está activado porque Firebase exige el plan Blaze
+(con tarjeta) para usarlo en proyectos nuevos. Por eso no se pueden subir
+imágenes ni agregar signos. El detalle está en el README del repositorio.
 ```
