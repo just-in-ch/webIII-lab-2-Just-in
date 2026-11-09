@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<!-- Visualization environment -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Control environment web application -->
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		  rel="stylesheet"
+		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		  crossorigin="anonymous">
+
+	<!-- Font awesome decoration -->
+	<script src="https://kit.fontawesome.com/2c7bfef965.js" crossorigin="anonymous"></script>
+
+	<!-- Custom decoration -->
+	<title>Inicio - Zodiaco</title>
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- References Firebase libraries -->
+	<script defer src="/__/firebase/13.2.0/firebase-app-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-auth-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-database-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-firestore-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-storage-compat.js"></script>
+
+	<!-- initilized firebase object -->
+	<script defer src="/__/firebase/init.js"></script>
+
+	<!-- calling user authentication functions -->
+	<script defer src="js/users/islogin.js"></script>
+
+	<script>
+		window.addEventListener('load', () => {
+			validar();
+			console.log('La página está completamente cargada');
+		});
+	</script>
+</head>
+<body class="container">
+	<header class="header row">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html"><i class="fa-solid fa-star"></i> Zodiaco</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+						aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Inicio</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_01" role="button" data-bs-toggle="dropdown"
+							   aria-expanded="false">
+								Horoscopo
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_01">
+								<li><a class="dropdown-item" href="lista.html">Listar Signos</a></li>
+								<li><a class="dropdown-item" href="agregar.html">Agregar Signo</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink_02" role="button" data-bs-toggle="dropdown"
+							   aria-expanded="false">
+								Usuarios
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink_02">
+								<li><a class="dropdown-item" href="registrar.html">Registrar nuevo usuario</a></li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" onclick="salir(); return false;">Cerrar sesión</a>
+						</li>
+					</ul>
+					<span id="lblInactividad" class="badge bg-secondary d-none" title="Tiempo restante antes de cerrar la sesión por inactividad"></span>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="row">
+		<div class="col-md-6 text-center">
+			<img src="img/portada.png" class="imgPortada" alt="Zodiaco - Alfons Mucha (1896)">
+		</div>
+		<div class="col-md-6">
+			<h4>Bienvenido(a) <span id="lblNombre"></span></h4>
+			<div class="card mt-3">
+				<div class="card-header">Datos de la cuenta</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"><b>Correo:</b> <span id="lblEmail">-</span></li>
+					<li class="list-group-item"><b>Fecha de creación:</b> <span id="lblCreacion">-</span></li>
+					<li class="list-group-item"><b>Último acceso:</b> <span id="lblAcceso">-</span></li>
+				</ul>
+			</div>
+		</div>
+	</main>
+
+	<footer class="row">
+
+	</footer>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+	<script defer src="js/users/perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<!-- Visualization environment -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Control environment web application -->
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		  rel="stylesheet"
+		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		  crossorigin="anonymous">
+
+	<!-- Font awesome decoration -->
+	<script src="https://kit.fontawesome.com/2c7bfef965.js" crossorigin="anonymous"></script>
+
+	<!-- Custom decoration -->
+	<title>Registrar usuario</title>
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- References Firebase libraries -->
+	<script defer src="/__/firebase/13.2.0/firebase-app-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-auth-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-database-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-firestore-compat.js"></script>
+	<script defer src="/__/firebase/13.2.0/firebase-storage-compat.js"></script>
+
+	<!-- initilized firebase object -->
+	<script defer src="/__/firebase/init.js"></script>
+</head>
+<body class="container">
+	<header class="header row">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html"><i class="fa-solid fa-star"></i> Zodiaco</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+						aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="login.html">Ingresar</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="registrar.html">Registrar nuevo usuario</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="row">
+		<h4>Sign up</h4>
+		<div class="formatForm">
+			<label for="txtNombre">Nombre:</label><br>
+			<input type="text" id="txtNombre" class="form-control" required><br>
+
+			<label for="txtEmail">Correo electrónico:</label><br>
+			<input type="email" id="txtEmail" class="form-control" required><br>
+
+			<label for="txtContra">Contraseña (mínimo 6 caracteres):</label><br>
+			<input type="password" id="txtContra" class="form-control" required><br>
+
+			<label for="txtFechaCreacion">Fecha de creación de la cuenta:</label><br>
+			<input type="text" id="txtFechaCreacion" class="form-control" readonly><br>
+
+			<label for="txtUltAcceso">Fecha de último acceso:</label><br>
+			<input type="text" id="txtUltAcceso" class="form-control" readonly><br>
+			<small class="text-muted">Las fechas las asigna el servidor de Firebase al guardar.</small>
+			<br><br>
+			<input type="button" id="btnInsUser" name="btnInsUser" class="btn btn-primary" value="Insertar Usuario">
+		</div>
+	</main>
+
+	<footer class="row">
+
+	</footer>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+	<script defer src="js/users/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* CSS Document */
+:root{
+	--primary: #110C0CFF;
+	--light: #FFFFFF;
+	--grey1: #EEEEEE;
+	--grey2: #F0F1F1;
+	--orange: #D6731D;
+	--lblue1: #559EE0;
+	--lblue2: #B4C5E5;
+
+	/* colores por elemento */
+	--fuego: #D6731D;
+	--tierra: #6B8E23;
+	--aire: #559EE0;
+	--agua: #1F5FA8;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+input, select, textarea{
+	user-select: text;
+}
+
+.header .navbar {
+	background-color: rgba(255,255,255,0.5) !important;
+}
+
+body{
+	padding-top: 70px;
+}
+
+.formatDiv{
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formatForm{
+	max-width: 480px;
+}
+
+.imgPortada{
+	max-width: 100%;
+	max-height: 75vh;
+	border-radius: 6px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.imgEditar{
+	width: 100%;
+	max-width: 260px;
+	border-radius: 6px;
+	margin-bottom: 15px;
+}
+
+.imgBlock{
+	height: 150px;
+	width: 150px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* ---------- tarjeta del signo ---------- */
+.divAnuncio{
+	background-color: var(--light);
+	border: thin solid var(--lblue1);
+	border-top: 6px solid var(--lblue1);
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px var(--lblue2);
+	float: left;
+	margin: 8px;
+	padding: 5px 5px 10px 5px;
+	text-align: center;
+	width: 200px;
+	cursor: pointer;
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.divAnuncio:hover{
+	transform: translateY(-4px);
+	box-shadow: 4px 6px 12px var(--lblue2);
+}
+
+.divAnuncio .signo{
+	font-weight: bold;
+	font-size: 1.15rem;
+	margin-top: 5px;
+}
+
+.divAnuncio .rango{
+	font-size: .85rem;
+	color: #555;
+}
+
+.divAnuncio .datos{
+	list-style: none;
+	text-align: left;
+	font-size: .85rem;
+	margin: 8px 8px 6px 8px;
+	padding-top: 6px;
+	border-top: 1px dashed var(--grey1);
+}
+
+.divAnuncio .datos li{
+	margin-bottom: 2px;
+}
+
+.divAnuncio .datos i{
+	width: 18px;
+	text-align: center;
+}
+
+.divAnuncio .editar{
+	font-size: .75rem;
+	color: #888;
+}
+
+.badgeElemento{
+	display: inline-block;
+	color: var(--light);
+	border-radius: 10px;
+	padding: 1px 8px;
+	font-size: .75rem;
+}
+
+/* color de la tarjeta según el elemento */
+.elem-fuego  { border-top-color: var(--fuego);  }
+.elem-tierra { border-top-color: var(--tierra); }
+.elem-aire   { border-top-color: var(--aire);   }
+.elem-agua   { border-top-color: var(--agua);   }
+
+.elem-fuego  .badgeElemento { background-color: var(--fuego);  }
+.elem-tierra .badgeElemento { background-color: var(--tierra); }
+.elem-aire   .badgeElemento { background-color: var(--aire);   }
+.elem-agua   .badgeElemento { background-color: var(--agua);   }
+.elem-ninguno .badgeElemento { background-color: #999; }
